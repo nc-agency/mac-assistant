@@ -9,6 +9,9 @@
  * - Statusanzeige für Python-Backend und Fehler hinzugefügt
  * - Verbesserte Benutzerführung bei Fehlern/Verbindungsproblemen
  * - Platzhalter für Log-Anzeige und Neustart-Button
+ * - StatusBar jetzt mit echtem Python-Backend-Status und Fehleranzeige
+ * - Backend-Logs werden im UI angezeigt
+ * - Neustart-Button startet Python-Backend neu
  */
 
 import SwiftUI
@@ -17,13 +20,11 @@ struct MenuBarView: View {
     @EnvironmentObject private var pythonBridge: PythonBridge
     @EnvironmentObject private var appState: AppState
     
-    @State private var pythonConnected: Bool = true
-    @State private var lastError: String? = nil
     @State private var showLogs: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
-            StatusBar(pythonConnected: $pythonConnected, lastError: $lastError)
+            StatusBar(pythonBridge: pythonBridge)
                 .padding(.bottom, 4)
             // Kopfzeile mit Logo und Status
             HeaderView()
@@ -57,7 +58,8 @@ struct MenuBarView: View {
             FooterView()
             
             Button(action: {
-                // TODO: Python-Backend neu starten
+                pythonBridge.stopPythonProcess()
+                pythonBridge.setupPythonProcess()
             }) {
                 Label("Assistent neu starten", systemImage: "arrow.clockwise")
             }
@@ -70,11 +72,20 @@ struct MenuBarView: View {
             .padding(.vertical, 4)
             
             if showLogs {
-                Text("[Platzhalter für Backend-Logs]")
-                    .font(.caption2)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 2) {
+                        ForEach(pythonBridge.systemMessages.suffix(15), id: \ .self) { msg in
+                            Text(msg)
+                                .font(.caption2)
+                                .foregroundColor(msg.lowercased().contains("fehler") || msg.lowercased().contains("error") ? .red : .primary)
+                                .padding(.bottom, 1)
+                        }
+                    }
                     .padding(8)
-                    .background(Color(.systemGray5))
-                    .cornerRadius(8)
+                }
+                .background(Color(.systemGray5))
+                .cornerRadius(8)
+                .frame(maxHeight: 120)
             }
         }
         .frame(width: 400, height: 500)
@@ -82,20 +93,19 @@ struct MenuBarView: View {
 }
 
 struct StatusBar: View {
-    @Binding var pythonConnected: Bool
-    @Binding var lastError: String?
+    @ObservedObject var pythonBridge: PythonBridge
     
     var body: some View {
         HStack(spacing: 10) {
             Circle()
-                .fill(pythonConnected ? Color.green : Color.red)
+                .fill(pythonBridge.isConnected ? Color.green : Color.red)
                 .frame(width: 10, height: 10)
-            Text(pythonConnected ? "Backend verbunden" : "Backend nicht erreichbar")
+            Text(pythonBridge.isConnected ? "Backend verbunden" : "Backend nicht erreichbar")
                 .font(.caption)
-            if let error = lastError {
+            if let lastLog = pythonBridge.systemMessages.last, lastLog.lowercased().contains("fehler") || lastLog.lowercased().contains("error") {
                 Image(systemName: "exclamationmark.triangle.fill")
                     .foregroundColor(.yellow)
-                Text(error)
+                Text(lastLog)
                     .font(.caption2)
                     .foregroundColor(.red)
                     .lineLimit(2)
