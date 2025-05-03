@@ -6,6 +6,9 @@
  * - Implementierung der Menüleisten-Benutzeroberfläche
  * - Integration der Haupt-UI-Komponenten
  * - Einrichtung der Tab-Navigation
+ * - Statusanzeige für Python-Backend und Fehler hinzugefügt
+ * - Verbesserte Benutzerführung bei Fehlern/Verbindungsproblemen
+ * - Platzhalter für Log-Anzeige und Neustart-Button
  */
 
 import SwiftUI
@@ -14,8 +17,14 @@ struct MenuBarView: View {
     @EnvironmentObject private var pythonBridge: PythonBridge
     @EnvironmentObject private var appState: AppState
     
+    @State private var pythonConnected: Bool = true
+    @State private var lastError: String? = nil
+    @State private var showLogs: Bool = false
+    
     var body: some View {
         VStack(spacing: 0) {
+            StatusBar(pythonConnected: $pythonConnected, lastError: $lastError)
+                .padding(.bottom, 4)
             // Kopfzeile mit Logo und Status
             HeaderView()
             
@@ -46,8 +55,55 @@ struct MenuBarView: View {
             
             // Statusleiste
             FooterView()
+            
+            Button(action: {
+                // TODO: Python-Backend neu starten
+            }) {
+                Label("Assistent neu starten", systemImage: "arrow.clockwise")
+            }
+            .padding(.vertical, 4)
+            Button(action: {
+                showLogs.toggle()
+            }) {
+                Label("Logs anzeigen", systemImage: "doc.text.magnifyingglass")
+            }
+            .padding(.vertical, 4)
+            
+            if showLogs {
+                Text("[Platzhalter für Backend-Logs]")
+                    .font(.caption2)
+                    .padding(8)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(8)
+            }
         }
         .frame(width: 400, height: 500)
+    }
+}
+
+struct StatusBar: View {
+    @Binding var pythonConnected: Bool
+    @Binding var lastError: String?
+    
+    var body: some View {
+        HStack(spacing: 10) {
+            Circle()
+                .fill(pythonConnected ? Color.green : Color.red)
+                .frame(width: 10, height: 10)
+            Text(pythonConnected ? "Backend verbunden" : "Backend nicht erreichbar")
+                .font(.caption)
+            if let error = lastError {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundColor(.yellow)
+                Text(error)
+                    .font(.caption2)
+                    .foregroundColor(.red)
+                    .lineLimit(2)
+            }
+        }
+        .padding(5)
+        .background(Color(.systemGray6))
+        .cornerRadius(8)
     }
 }
 
