@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+/*
+ * project.pbxproj
+ * Erstellt am: 2025-05-04
+ * 
+ * Änderungen:
+ * - Initiale Erstellung des Xcode-Projekts
+ * - Konfiguration der Build-Einstellungen
+ * - Einrichtung der Zielabhängigkeiten und Frameworks
+ * - Integration der Swift-Dateien und Python-Bridge
+ */
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A1E2D1F2A1A3B4C00F8E7D6 /* MacAssistantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1E2D1E2A1A3B4C00F8E7D6 /* MacAssistantApp.swift */; };
+		7A1E2D232A1A3B4E00F8E7D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1E2D222A1A3B4E00F8E7D6 /* Assets.xcassets */; };
+		7A1E2D262A1A3B4E00F8E7D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1E2D252A1A3B4E00F8E7D6 /* Preview Assets.xcassets */; };
+		7A1E2D2E2A1A3B7200F8E7D6 /* PythonBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1E2D2D2A1A3B7200F8E7D6 /* PythonBridge.swift */; };
+		7A1E2D302A1A3B8500F8E7D6 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1E2D2F2A1A3B8500F8E7D6 /* MenuBarView.swift */; };
+		7A1E2D422A1A3D4500F8E7D6 /* python in Resources */ = {isa = PBXBuildFile; fileRef = 7A1E2D412A1A3D4500F8E7D6 /* python */; };
+		7A1E2D442A1A3D5600F8E7D6 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 7A1E2D432A1A3D5600F8E7D6 /* src */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7A1E2D1B2A1A3B4C00F8E7D6 /* Mac Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1E2D1E2A1A3B4C00F8E7D6 /* MacAssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAssistantApp.swift; sourceTree = "<group>"; };
+		7A1E2D222A1A3B4E00F8E7D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A1E2D252A1A3B4E00F8E7D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7A1E2D272A1A3B4E00F8E7D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A1E2D282A1A3B4E00F8E7D6 /* MacAssistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacAssistant.entitlements; sourceTree = "<group>"; };
+		7A1E2D2D2A1A3B7200F8E7D6 /* PythonBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonBridge.swift; sourceTree = "<group>"; };
+		7A1E2D2F2A1A3B8500F8E7D6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		7A1E2D412A1A3D4500F8E7D6 /* python */ = {isa = PBXFileReference; lastKnownFileType = folder; path = python; sourceTree = "<group>"; };
+		7A1E2D432A1A3D5600F8E7D6 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A1E2D182A1A3B4C00F8E7D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A1E2D122A1A3B4C00F8E7D6 = {
+			isa = PBXGroup;
+			children = (
+				7A1E2D1D2A1A3B4C00F8E7D6 /* MacAssistant */,
+				7A1E2D1C2A1A3B4C00F8E7D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A1E2D1C2A1A3B4C00F8E7D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A1E2D1B2A1A3B4C00F8E7D6 /* Mac Assistant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A1E2D1D2A1A3B4C00F8E7D6 /* MacAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				7A1E2D1E2A1A3B4C00F8E7D6 /* MacAssistantApp.swift */,
+				7A1E2D2D2A1A3B7200F8E7D6 /* PythonBridge.swift */,
+				7A1E2D2F2A1A3B8500F8E7D6 /* MenuBarView.swift */,
+				7A1E2D222A1A3B4E00F8E7D6 /* Assets.xcassets */,
+				7A1E2D272A1A3B4E00F8E7D6 /* Info.plist */,
+				7A1E2D282A1A3B4E00F8E7D6 /* MacAssistant.entitlements */,
+				7A1E2D412A1A3D4500F8E7D6 /* python */,
+				7A1E2D432A1A3D5600F8E7D6 /* src */,
+				7A1E2D242A1A3B4E00F8E7D6 /* Preview Content */,
+			);
+			path = MacAssistant;
+			sourceTree = "<group>";
+		};
+		7A1E2D242A1A3B4E00F8E7D6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7A1E2D252A1A3B4E00F8E7D6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A1E2D1A2A1A3B4C00F8E7D6 /* MacAssistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A1E2D2B2A1A3B4E00F8E7D6 /* Build configuration list for PBXNativeTarget "MacAssistant" */;
+			buildPhases = (
+				7A1E2D172A1A3B4C00F8E7D6 /* Sources */,
+				7A1E2D182A1A3B4C00F8E7D6 /* Frameworks */,
+				7A1E2D192A1A3B4C00F8E7D6 /* Resources */,
+				7A1E2D3F2A1A3C8F00F8E7D6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacAssistant;
+			productName = MacAssistant;
+			productReference = 7A1E2D1B2A1A3B4C00F8E7D6 /* Mac Assistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A1E2D132A1A3B4C00F8E7D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7A1E2D1A2A1A3B4C00F8E7D6 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 7A1E2D162A1A3B4C00F8E7D6 /* Build configuration list for PBXProject "MacAssistant" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = de;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				de,
+				en,
+				Base,
+			);
+			mainGroup = 7A1E2D122A1A3B4C00F8E7D6;
+			productRefGroup = 7A1E2D1C2A1A3B4C00F8E7D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A1E2D1A2A1A3B4C00F8E7D6 /* MacAssistant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A1E2D192A1A3B4C00F8E7D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A1E2D262A1A3B4E00F8E7D6 /* Preview Assets.xcassets in Resources */,
+				7A1E2D442A1A3D5600F8E7D6 /* src in Resources */,
+				7A1E2D422A1A3D4500F8E7D6 /* python in Resources */,
+				7A1E2D232A1A3B4E00F8E7D6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A1E2D3F2A1A3C8F00F8E7D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Skript zum Kopieren der Python-Umgebung während des Builds\nSRC_DIR=\"${PROJECT_DIR}/../\"\nDST_DIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/\"\n\n# Python-Umgebung kopieren, falls nicht vorhanden\nif [ ! -d \"${DST_DIR}/python\" ]; then\n    echo \"Kopiere Python-Umgebung...\"\n    mkdir -p \"${DST_DIR}/python\"\n    cp -R \"${SRC_DIR}/venv/\" \"${DST_DIR}/python/\"\n    \n    # Pfade in der Python-Umgebung korrigieren\n    find \"${DST_DIR}/python/bin\" -type f -exec sed -i '' \"s|${SRC_DIR}/venv|@executable_path/../Resources/python|g\" {} \\;\n    \n    echo \"Python-Umgebung kopiert!\"\nfi\n\n# Python-Skripte kopieren\necho \"Kopiere Python-Skripte...\"\nmkdir -p \"${DST_DIR}/src\"\ncp -R \"${SRC_DIR}/src/\" \"${DST_DIR}/src/\"\n\n# Kopiere auch die .env-Datei, falls vorhanden\nif [ -f \"${SRC_DIR}/.env\" ]; then\n    cp \"${SRC_DIR}/.env\" \"${DST_DIR}/\"\nfi\n\necho \"Build-Phase abgeschlossen!\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A1E2D172A1A3B4C00F8E7D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A1E2D2E2A1A3B7200F8E7D6 /* PythonBridge.swift in Sources */,
+				7A1E2D302A1A3B8500F8E7D6 /* MenuBarView.swift in Sources */,
+				7A1E2D1F2A1A3B4C00F8E7D6 /* MacAssistantApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7A1E2D292A1A3B4E00F8E7D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7A1E2D2A2A1A3B4E00F8E7D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7A1E2D2C2A1A3B4E00F8E7D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacAssistant/MacAssistant.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacAssistant/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacAssistant/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 NC Agency. Alle Rechte vorbehalten.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mac Assistant benötigt Zugriff auf das Mikrofon, um deine Sprachbefehle zu hören.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ncagency.macassistant;
+				PRODUCT_NAME = "Mac Assistant";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7A1E2D2D2A1A3B4E00F8E7D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacAssistant/MacAssistant.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacAssistant/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacAssistant/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 NC Agency. Alle Rechte vorbehalten.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mac Assistant benötigt Zugriff auf das Mikrofon, um deine Sprachbefehle zu hören.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ncagency.macassistant;
+				PRODUCT_NAME = "Mac Assistant";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A1E2D162A1A3B4C00F8E7D6 /* Build configuration list for PBXProject "MacAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1E2D292A1A3B4E00F8E7D6 /* Debug */,
+				7A1E2D2A2A1A3B4E00F8E7D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A1E2D2B2A1A3B4E00F8E7D6 /* Build configuration list for PBXNativeTarget "MacAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1E2D2C2A1A3B4E00F8E7D6 /* Debug */,
+				7A1E2D2D2A1A3B4E00F8E7D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A1E2D132A1A3B4C00F8E7D6 /* Project object */;
+}
