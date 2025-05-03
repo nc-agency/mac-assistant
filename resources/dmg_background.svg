@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+dmg_background.svg - Hintergrundgrafik für DMG-Installationsfenster
+Erstellt am: 2025-05-04
+Änderungen:
+- Initiale Hintergrundgrafik für Mac-Assistenten DMG
+- Modernes Design mit Verlaufseffekt und App-Positionierungshilfen
+-->
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Hintergrundverlauf -->
+    <defs>
+        <linearGradient id="background" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2C5364"/>
+            <stop offset="50%" stop-color="#203A43"/>
+            <stop offset="100%" stop-color="#0F2027"/>
+        </linearGradient>
+    </defs>
+    <rect width="800" height="400" fill="url(#background)"/>
+    
+    <!-- Titel -->
+    <text x="400" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">Mac Assistant</text>
+    <text x="400" y="100" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#E0E0E0" text-anchor="middle">Der intelligente Assistent für deinen Mac</text>
+    
+    <!-- Trennlinie -->
+    <line x1="200" y1="130" x2="600" y2="130" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    
+    <!-- App-Platzierungskreis (links) -->
+    <circle cx="200" cy="190" r="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="200" y="300" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#E0E0E0" text-anchor="middle">Hier ziehen</text>
+    
+    <!-- Pfeil -->
+    <path d="M400 190 L440 190 L440 170 L480 200 L440 230 L440 210 L400 210 Z" fill="rgba(255,255,255,0.5)"/>
+    
+    <!-- Applications-Platzierungskreis (rechts) -->
+    <circle cx="600" cy="190" r="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="600" y="300" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#E0E0E0" text-anchor="middle">Programme</text>
+    
+    <!-- Fußzeile -->
+    <text x="400" y="370" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#A0A0A0" text-anchor="middle">Ziehe die App auf den Programme-Ordner, um Mac Assistant zu installieren</text>
+    <text x="400" y="390" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#808080" text-anchor="middle">© 2025 NC Agency. Alle Rechte vorbehalten.</text>
+</svg>
